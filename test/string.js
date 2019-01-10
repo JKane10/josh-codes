@@ -40,6 +40,14 @@ describe('String', function() {
       it('returns false if the position argument does not line up with the search string - empty string', function() {
         expect("".endsWith("r")).to.equal(false)
       })
+
+      it('returns false if the position argument does not line up with the search string - search length exceeds input', function() {
+        expect("".endsWith("rrrrrr")).to.equal(false)
+      })
+
+      it('returns false if the postion argument exceeds the input string', function() {
+        expect("fooobar".endsWith("oo", 15)).to.equal(false)
+      })
     })
   })
 })
